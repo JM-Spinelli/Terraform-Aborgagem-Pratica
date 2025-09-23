@@ -6,10 +6,15 @@ Comando:``sudo s- install
 
 
 ``<p>sudo apt update
+
+<p> apt install gpg -y
+<p> apt install wget -y 
 <p>sudo apt install software-properties-common apt-transport-https wget -y
-<p>wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
+<p>wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null #remover sudo se já estiver como sudo
 <p>echo "deb [arch=amd64] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
 <p>sudo apt update
 <p>sudo apt install code -y``
 
+comando no linux para rodar vs code em root 
 
+code --no-sandbox --user-data-dir "dirtorio que o vs ta"
