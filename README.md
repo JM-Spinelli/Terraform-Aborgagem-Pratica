@@ -3,14 +3,23 @@
 <p>O Terraform é uma ferramenta de Infraestrutura como Código (IaC), ou seja, através de código é  possível provisionar e gerenciar infraestrutura em nuvem e local de forma segura e eficiente.<br>
 Segue uma estrtura de Provider e Resource, sendo o Provider as infomações configurações necessárias para se conectar ao provedor e a o Resourve as configurações feitas para provisionar a infraestrtura na nuvem escolhida</p>
 
-<h3>Principais comandos Terraform</h3>
+<h3>Comandos Terraform</h3>
 
-<h4>Comandos Sitemas</h4>
+<h4>Principais Comandos</h4>
 
- - <b>Terraform Init -</b> Inicia o Terraform<br>
- - <b>Terraform Plan -</b> Apresenta as alterações realizadas no código antes de aplicar<br>
- - <b>Terraform Apply -</b> Aplica as alterações realizadas no código Terraform<br>
- - <b>Terraform Destroy -</b> Deleta toda a infraestrutura cloud criada via código<br>
+ - <b>Terraform init -</b> Inicia o Terraform<br>
+ - <b>Terraform validate -</b> Faz a valdação do código para determinar se está tudo correto<br>
+ - <b>Terraform plan -</b> Apresenta as alterações realizadas no código antes de aplicar<br>
+ - <b>Terraform apply -</b> Aplica as alterações realizadas no código Terraform<br>
+ - <b>Terraform refresh -</b> Faz com que o sistema entenda modificações realizadas no código<br>
+ - <b>Terraform destroy -</b> Deleta toda a infraestrutura cloud criada via código<br>
+ - <b>Terraform Output -</b> Exibe na tela informações definidas nos arquivos output<br>
+ - <b>Terraform Show -</b> Mostra detalhes do arquivo Tfstate(arquivo de estado atual do código terraform), que é o código principal da infraestrutura em nuvem<br>
+ - <b>Terraform plan -</b> Apresenta as alterações realizadas no código antes de aplicar<br>
+ - <b>Terraform apply -</b> Aplica as alterações realizadas no código Terraform<br>
+ - <b>Terraform refresh -</b> Faz com que o sistema entenda modificações realizadas no código<br>
+ - <b>Terraform destroy -</b> Deleta toda a infraestrutura cloud criada via código<br>
+
 
 #
 Para começo de uso do terraform, vamos realizar a instalação do Visual Studio no computador. Recomendo instalar no seu sitema operacinal de escolha. 
