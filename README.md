@@ -73,8 +73,22 @@ Com o Vs Code já instalado, começamos a colocar a mão na massa com terraform.
 
 <h4>1º - Criando pasta para armazenamento de arquivos</h4>
 
-<p>No meu sistema operacional, a fim de manter a melhor organização, iremos criar uma pasta para armazenar todos os arquivos de terraform em um só lugar. Para isso, criarei a pasta ``Projetos``.   
-
+<p>No meu sistema operacional, a fim de manter a melhor organização, iremos criar uma pasta para armazenar todos os arquivos de terraform em um só lugar. Para isso, criarei a pasta ``Projetos``.
  
-</p>
+ ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img1.png)
+ </p>
+
+ <h4>2º - Indo para o VS-Code</h4>
+ <p>No terminal, dentro da pasta <b>'projeto'</b>, abriremos o Vs code com o comando <b>``code .``</b>
+  
+ ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img2.PNG)
+ 
+ VS Code já aberto ta pasta <b>'projetos'</b>
+ 
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img03.PNG)
+ 
+ </p>
+<br>
+ <h4>3º - Criando arquivo main.tf </h4>
+ 
 
