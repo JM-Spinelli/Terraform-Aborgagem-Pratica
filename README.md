@@ -92,14 +92,14 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
   
   Pasta Criada
  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img04.png)
-
+ 
   Abrindo terminal e elevando user para root
-   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img05.png)![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img006.png)
+  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img05.png)
+  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img006.png)
 
   Arquivo criado a partir do comando ``touch main.tf``
   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img007.png)
-  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img008.png)
-
+  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img008.png)<br>
   Recomendo fazer desta forma, pois assim você conseguirá executar todos os comando do terraform sem a necessidade de a cada comando digitar ``sudo`` no início de cada comando. 
   
   
