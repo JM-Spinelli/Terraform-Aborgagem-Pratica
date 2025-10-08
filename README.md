@@ -94,8 +94,7 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img04.png)
 
   Abrindo terminal e elevando user para root
-   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img05.png)
-   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img006.png)
+   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img05.png)![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img006.png)
 
   Arquivo criado a partir do comando ``touch main.tf``
   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img007.png)
