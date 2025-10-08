@@ -103,7 +103,31 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
   Recomendo fazer desta forma, pois assim você conseguirá executar todos os comando do terraform sem a necessidade de a cada comando digitar ``sudo`` no início de cada comando. <br><br>
 
   <h4>4º - Difinindo as configurações principais do <b>main.tf</b></h4>
-  Antes de começarmos a criar o recursos (resources) em si, primeiro precisamos criar as definições do provedor, de versão o terraform e estabelecer a comunicação com a nossa conta aws. 
+  Antes de começarmos a criar o recursos (resources) em si, primeiro precisamos criar as definições do provedor, de versão do terraform e estabelecer a comunicação com a nossa conta aws. 
+
+   <b>1º - Definição de ``provider`` e ``versao``</b>
+   
+  Para definir o provdor e a versão, estruturamos da seguinte forma
+  ```
+  terraform {
+  required_providers {
+   aws = {
+    source = "hashicorp/aws"
+    version = "~>5.0"
+    }
+ }
+  required_version = ">= 1.12.2"
+}
+```
+Imagem exemplo
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img009.png)
+<b>Explicando</b>
+ - <b>terraform {} -</b> Este é o bloco terraform e ele server justamente para configurar o próprio Terraform antes de qualquer recurso ser declarado. Esse bloco define configurações globais que afetam todo o comportamento do Terraform <br>
+ - <b>required_providers -</b> É dentro dessa estrutura que eu informo o meu terraform que provider eu vou utilizar (Aws, Azure, Gcp etc), sua origem (caminho se onde vai buscar seus pacotes e dependências, e a última versão lançada do pelo provedor, que contempla as últimas atualizações.<br>
+ - <b>required_version -</b> É o local onde defino qual a versão do terraform eu utilizarei. É recomendável sempre utilizar a última lançada para pegar todas as atualizações<br>
+ 
+ Veja, todas essa definições ficam dentro do bloco de terraform porque são informações necessárias para que o terraformo funcione adequadamente. 
+
   
   
   
