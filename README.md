@@ -90,17 +90,20 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
 
   Para criarmos o arquivo main, basta gerarmos um novo arquivo no Vs code com o nome `` main.tf ``. No entanto, antes eu irei criar uma pasta chamada ``terraform`` dedicada para esse nosso primeiro projeto.<br>
   
-  Pasta Criada
- ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img04.png)
+  <b>3.1</b> - Pasta Criada
+  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img04.png)
  
-  Abrindo terminal e elevando user para root
+  <b>3.2</b> - Abrindo terminal e elevando user para root
   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img05.png)
   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img006.png)
 
-  Arquivo criado a partir do comando ``touch main.tf``
+  <b>3.3</b> - Arquivo criado a partir do comando ``touch main.tf``
   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img007.png)
   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img008.png)<br>
-  Recomendo fazer desta forma, pois assim você conseguirá executar todos os comando do terraform sem a necessidade de a cada comando digitar ``sudo`` no início de cada comando. 
+  Recomendo fazer desta forma, pois assim você conseguirá executar todos os comando do terraform sem a necessidade de a cada comando digitar ``sudo`` no início de cada comando. <br><br>
+
+  <h4>4º - Difinindo as configurações principais do <b>main.tf</b></h4>
+  Antes de começarmos a criar o recursos (resources) em si, primeiro precisamos criar as definições do provedor, de versão o terraform e estabelecer a comunicação com a nossa conta aws. 
   
   
   
