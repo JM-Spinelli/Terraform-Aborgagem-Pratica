@@ -73,27 +73,37 @@ Com o Vs Code já instalado, começamos a colocar a mão na massa com terraform.
 
 <h4>1º - Criando pasta para armazenamento de arquivos</h4>
 
-<p>No meu sistema operacional, a fim de manter a melhor organização, iremos criar uma pasta para armazenar todos os arquivos de terraform em um só lugar. Para isso, criarei a pasta ``Projetos``.
- 
+No meu sistema operacional, a fim de manter a melhor organização, iremos criar uma pasta para armazenar todos os arquivos de terraform em um só lugar. Para isso, criarei a pasta ``Projetos``.
  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img1.png)
- </p>
+
 
  <h4>2º - Indo para o VS-Code</h4>
- <p>No terminal, dentro da pasta <b>'projeto'</b>, abriremos o Vs code com o comando <b>``code .``</b>
-  
+ No terminal, dentro da pasta <b>'projeto'</b>, abriremos o Vs code com o comando <b>code .</b>
+
  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img2.PNG)
  
  VS Code já aberto ta pasta <b>'projetos'</b>
- 
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img03.PNG)
- 
- </p>
+ ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img03.PNG)
+
 <br>
- <h4>3º - Criando arquivo ``main`` </h4>
- <p>
-  Para criarmos o arquivo main, basta gerarmos um novo arquivo no Vs code com o nome ``main.tf``. No entanto, antes eu irei criar uma pasta ``terraform`` dedicada para esse nosso primeiro projeto.
- 
+ <h4>3º - Criando arquivo <b>main</b> </h4>
+
+  Para criarmos o arquivo main, basta gerarmos um novo arquivo no Vs code com o nome `` main.tf ``. No entanto, antes eu irei criar uma pasta chamada ``terraform`` dedicada para esse nosso primeiro projeto.<br>
+  
+  Pasta Criada
  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img04.png)
 
+  Abrindo terminal e elevando user para root
+   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img05.png)
+   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img006.png)
+
+  Arquivo criado a partir do comando ``touch main.tf``
+  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img007.png)
+  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img008.png)
+
+  Recomendo fazer desta forma, pois assim você conseguirá executar todos os comando do terraform sem a necessidade de a cada comando digitar ``sudo`` no início de cada comando. 
+  
+  
+  
+
  
-</p>
