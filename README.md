@@ -89,6 +89,11 @@ Com o Vs Code já instalado, começamos a colocar a mão na massa com terraform.
  
  </p>
 <br>
- <h4>3º - Criando arquivo main.tf </h4>
+ <h4>3º - Criando arquivo ``main`` </h4>
+ <p>
+  Para criarmos o arquivo main, basta gerarmos um novo arquivo no Vs code com o nome ``main.tf``. No entanto, antes eu irei criar uma pasta ``terraform`` dedicada para esse nosso primeiro projeto.
  
+ ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img04.png)
 
+ 
+</p>
