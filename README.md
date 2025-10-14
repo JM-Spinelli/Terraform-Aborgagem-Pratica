@@ -126,10 +126,29 @@ Imagem exemplo
  - <b>required_providers -</b> É dentro dessa estrutura que eu informo o meu terraform que provider eu vou utilizar (Aws, Azure, Gcp etc), sua origem (caminho se onde vai buscar seus pacotes e dependências, e a última versão lançada do pelo provedor, que contempla as últimas atualizações.<br>
  - <b>required_version -</b> É o local onde defino qual a versão do terraform eu utilizarei. É recomendável sempre utilizar a última lançada para pegar todas as atualizações<br>
  
- Veja, todas essa definições ficam dentro do bloco de terraform porque são informações necessárias para que o terraformo funcione adequadamente. 
+ Veja, todas essa definições ficam dentro do bloco de terraform porque são informações necessárias para que o terraform funcione adequadamente. 
 
-  
-  
-  
+ <b>2º - Definição de usuário </b>
+ Para que o terraform possa conversar com a console AWS, é necessário que seja criado um usuário (podendo ser uma Role ou um par de chaves) para que a infraestrutura seja provisionada via código. Sendo assim, você primeiro irá configurar um usuário no IAM da sua console e após ele estar criado, setar ele no terraform. 
+
+ Usuario criado no IAM
+![Meu Print]()
+
+ Definição de usário no código terraform
+ ![Meu Print]()
+
+ ```
+provider "aws" {
+profile = "jm-tf"
+region = "us-east-1"
+}
+```
+A região é a mesma em que seu ambiente está executando. 
+
+
+
+ <h4>Lançando primeiro recurso na console AWS</h4>
+
+ Vamos agora lançar nosso primeiro recurso diretamente na console AWS. 
 
  
