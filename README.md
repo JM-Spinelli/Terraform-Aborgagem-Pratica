@@ -132,10 +132,10 @@ Imagem exemplo
  Para que o terraform possa conversar com a console AWS, é necessário que seja criado um usuário (podendo ser uma Role ou um par de chaves) para que a infraestrutura seja provisionada via código. Sendo assim, você primeiro irá configurar um usuário no IAM da sua console e após ele estar criado, setar ele no terraform. 
 
  Usuario criado no IAM
-![Meu Print]()
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img10.png)
 
  Definição de usário no código terraform
- ![Meu Print]()
+ ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img11.png)
 
  ```
 provider "aws" {
@@ -143,12 +143,26 @@ profile = "jm-tf"
 region = "us-east-1"
 }
 ```
-A região é a mesma em que seu ambiente está executando. 
+Observação: A região é a mesma em que seu ambiente está executando. Eu coloquei us-east-1, por a região em que minha infra esta.
+#
+
+ <h3>3º Lançando primeiro recurso na console AWS</h3>
+ 
+ Os resources - que são os recursos da AWS - é o que provisiona a infraestrtura da console aws. Para utilizarmos, usamos a seguinte estrtutura ``resource "tipo-de-recurso" "nome-recurso" {}``
+
+ Exemplo
+  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img12.png)
+ 
+ ```
+resource "aws_instance" "Minha-EC2" {
+ intance_type = "t3.micro"
+ ami = "ami-052064a798f08f0d3"
+ subnet_id = "subnet-0c1f2ca01ca4b66d7"
+ security_groups = ["sg-0268d6a0a7c8ebe9e"]
+}
+```
 
 
 
- <h4>Lançando primeiro recurso na console AWS</h4>
-
- Vamos agora lançar nosso primeiro recurso diretamente na console AWS. 
 
  
