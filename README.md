@@ -227,6 +227,15 @@ observação: Quando você não define uma VPC, esse security group é automatic
    }
  }
 ```
+para atribuir um nome ao security group, utilizamos o bloco ``tags``. 
+
+Definindo Tag no código
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img22.png)
+
+Tag Name
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img21.png)
+
+
 
 
 
