@@ -151,7 +151,7 @@ Observação: A região é a mesma em que seu ambiente está executando. Eu colo
  Os resources - que são os recursos da AWS - é o que provisiona a infraestrtura da console aws. Para utilizarmos, usamos a seguinte estrtutura ``resource "tipo-de-recurso" "nome-recurso" {}``
 
  Exemplo
-  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img12.png)
+  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img13.png)
  
  ```
 resource "aws_instance" "Minha-EC2" {
