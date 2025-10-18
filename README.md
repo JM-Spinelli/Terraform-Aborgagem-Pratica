@@ -150,19 +150,84 @@ Observação: A região é a mesma em que seu ambiente está executando. Eu colo
  
  Os resources - que são os recursos da AWS - é o que provisiona a infraestrtura da console aws. Para utilizarmos, usamos a seguinte estrtutura ``resource "tipo-de-recurso" "nome-recurso" {}``
 
- Exemplo
-  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img13.png)
+ Como exemplo, EC2 lançada. Após o script pronto, iniciado o terraform (terraform init) e aplicado a código (terraform apply)
+  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img15.png)
+
+  EC2 lançada na console AWS
+  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img14.png)
  
  ```
 resource "aws_instance" "Minha-EC2" {
  intance_type = "t3.micro"
  ami = "ami-052064a798f08f0d3"
- subnet_id = "subnet-0c1f2ca01ca4b66d7"
- security_groups = ["sg-0268d6a0a7c8ebe9e"]
+ subnet_id = "subnet-0c1f2ca01ca4b66d7" #Subnet da VPC
+ security_groups = ["sg-0268d6a0a7c8ebe9e"] #Security Group atribuído a EC2
 }
+```
+Uma observação importante é que, exceto ao utilizar uma VPC Default (criada pela própria AWS), ao lançar uma EC2 é necessário definir uma Subnet_id e um Security_Group para que a EC2 seja lançada com sucesso. 
+
+#
+
+ <h3>4º Criando Security Group </h3>
+ 
+ O security group é bem simples de lançar. Sem que o adicione a uma VPC ou Uma EC2, basta apenas duas configurações, a ``description`` e a ``name``. 
+ 
+ ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img16.png)
+ 
+ ```
+ resource "aws_security_group" "SG-custom-2" {
+  description = "Meu SG customizado"
+  name = "SG-custom-2"
+ }
+```
+observação: Quando você não define uma VPC, esse security group é automaticamente associado a um security group default
+
+ <h4>Adicioando a uma VPC </h4>
+ 
+ Veja que neste exemplo eu irei adicionei uma VPC manualmente (uma VPC customizada criada por mim) e o terraform, ao eu executar um terraform apply, irá realizar um ``replaced``. Ou seja, irá derrubar o que está rodando para aplicar a nova alteração. Essa condição é algo que você tem que ter ciência quando estiver atuando em um ambiente produtivo. 
+
+  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img17.png)
+
+  VPC alterada
+  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img19.png)
+
+ ```
+ resource "aws_security_group" "SG-custom-2" {
+  description = "Meu SG customizado"
+  name = "SG-custom-2"
+  vpc_id = "vpc-0efcc7cbfc8c0040c"
+ }
+```
+<h4>Criando regras de entrada (inbound) e saida (outbound)</h4>
+
+É justamente em Inbound e Outbound que estabelecemos a comunicação entre os variados tipos de serviços fornecidos pela AWS. No terraform, o inboud é referenciado como ``ingress`` e o outbound por ``egress``. e dentro do bloco de cada um, adiconamos as configurações. 
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img20.png)
+
+```
+ resource "aws_security_group" "SG-custom-2" {
+  description = "Meu SG customizado"
+  name = "SG-custom-2"
+  vpc_id = "vpc-0efcc7cbfc8c0040c"
+
+  ingress {
+  from_port = "80"
+  to_port = "80"
+  protocol = "tcp"
+  cid_blocks = ["0.0.0.0/0"]
+  description = "entrada porta 80" 
+    }
+
+  egress {
+  from_port = "0" # De todas as portas
+  to_port = "0" # Para todas as portas
+  protocol = "-1" # Determina a saída para toda as portas
+  cidr_blocks = ["0.0.0.0/0"]
+  description = "saida para o mundo"
+  
+   }
+ }
 ```
 
 
 
-
- 
+  
