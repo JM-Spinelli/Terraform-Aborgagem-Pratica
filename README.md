@@ -236,6 +236,58 @@ Tag Name
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img21.png)
 
 
+<h4>5º Criando VPC, Subnet e Internet Gateway</h4>
+
+Para criar uma rede e suas depedências (subnet, route table, Internet Gateway etc), é necessária a criação de diversos blocos de resources. Abaixo, segue contrução total da rede. 
+
+<b>Criação VPC</b>
+
+Para criar a VPC, utilizamos o resouce  ``"aws_vpc" "Identificador_name" { cidr_block = "ip_rede"}``
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img23.png)
+
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img25.png)
+
+```
+resource "aws_vpc" "teste" {
+ cidr_block = "10.0.0.0/24"
+}
+```
+O ``Cidr_block`` é um identificador de endereço de rede e também determina a quantidade de endereços deponíveis de hosts. Numa rede ``/24``, temos um total de 256 endereços disponíveis para hosts. 
+
+<b>Criação subnet</b>
+
+Vou criar aqui apenas uma subnet e dini-la para rodar na avaiability_zone a (us-east-1a).
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img24.png)
+
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img26.png)
+
+```
+resource "aws_subnet" "Sub_a" {
+ vpc_id = aws_vpc.teste.id
+cidr_block = "10.0.0.64/26"
+avaibility_zone = "us-east-1a"
+
+tags = {
+ name = "Sub-a"
+ }
+}
+```
+<br>
+<b>Criação Internet Gateway</b>
+O internet Gateway (ig) é o recurso que permite a rede interna ter acesso a internet (acesso externo). 
+
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img27.png)
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img28.png)
+
+
+<b>Criação Route Table</b>
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img29.png)
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img30.png)
+
+<b>Associando Route Table a Subnet</b>
+
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img31.png)
+![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img32.png)
 
 
 
