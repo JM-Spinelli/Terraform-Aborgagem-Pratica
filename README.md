@@ -274,20 +274,53 @@ tags = {
 ```
 <br>
 <b>Criação Internet Gateway</b>
-O internet Gateway (ig) é o recurso que permite a rede interna ter acesso a internet (acesso externo). 
+O internet Gateway (ig) é o recurso que permite a rede interna ter acesso a internet (rede externa). 
 
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img27.png)
+
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img28.png)
 
+```
+resource "aws_internet_gateway" "my-ig" {
+ vpc_id = aws_vpc.teste.id
+
+  tags = {
+  name = "my-ig"
+}
+}
+```
 
 <b>Criação Route Table</b>
+A Route Table determina para onde o tráfego de rede é direcionado, atuando como um controlador de tráfego da VPC. É nela que setamos o internet Gateway. 
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img29.png)
+
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img30.png)
 
-<b>Associando Route Table a Subnet</b>
+```
+resource "aws_route_table" "my-rt" {
+ vpc_id = aws_vpc.teste.id
 
+route {
+ cidr_block = "0.0.0.0/0"
+ gateway_id = aws_internet_gateway.my-ig.id
+  }
+ }
+```
+
+<b>Associando Route Table a Subnet</b>
+Mesmo criando os resources (subnet, internet gateway e route table, é necessário associá-los através do bloco ``aws_route_table_association`` 
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img31.png)
+
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img32.png)
+
+```
+resource "aws_route_table_association" "associate" {
+ subnet_id = aws_subnet.Sub_a.id
+ route_table_id = aws_route_table.my-rt.id
+}
+```
+
+
 
 
 
