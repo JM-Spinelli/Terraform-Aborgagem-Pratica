@@ -148,6 +148,18 @@ region = "us-east-1"
 }
 ```
 Observação: A região é a mesma em que seu ambiente está executando. Eu coloquei us-east-1, por a região em que minha infra esta.
+
+Após gerado o par de chaves Key e configurado o usuário no bloco terraform, é necessário adicionar essas  informações no arquivo de configuração do AWS cli.
+
+1º - Instalando o AWS cli 
+Usar o comando: 
+```
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
+2º - Adicionando credenciais no arquivo de configuração da AWS 
+
 #
 
  <h3>3º Lançando primeiro recurso na console AWS</h3>
