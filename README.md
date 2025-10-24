@@ -95,7 +95,8 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
  
   <b>3.2</b> - Abrindo terminal e elevando user para root
   <img src="https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img05.png" alt="Meu Print" width="2000">
-  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img006.png)
+  <img src="https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img006.png" alt="Meu Print" width="2000">
+
 
   <b>3.3</b> - Arquivo criado a partir do comando ``touch main.tf``
   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img007.png)
