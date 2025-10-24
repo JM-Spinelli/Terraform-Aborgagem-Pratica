@@ -79,10 +79,11 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
 
  <h4>2º - Indo para o VS-Code</h4>
  No terminal, dentro da pasta <b>'projeto'</b>, abriremos o Vs code com o comando <b>code .</b>
-
+ 
  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img2.PNG)
  
  VS Code já aberto ta pasta <b>'projetos'</b>
+ 
  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img03.PNG)
 
 <br>
@@ -91,13 +92,16 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
   Para criarmos o arquivo main, basta gerarmos um novo arquivo no Vs code com o nome `` main.tf ``. No entanto, antes eu irei criar uma pasta chamada ``terraform`` dedicada para esse nosso primeiro projeto.<br>
   
   <b>3.1</b> - Pasta Criada
+  
   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img04.png)
  
   <b>3.2</b> - Abrindo terminal e elevando user para root
+  
   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img05.png)
   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img006.png)
 
   <b>3.3</b> - Arquivo criado a partir do comando ``touch main.tf``
+  
   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img007.png)
   ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img008.png)<br>
   Recomendo fazer desta forma, pois assim você conseguirá executar todos os comando do terraform sem a necessidade de a cada comando digitar ``sudo`` no início de cada comando. <br><br>
@@ -120,6 +124,7 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
 }
 ```
 Imagem exemplo
+
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img009.png)
 <b>Explicando</b>
  - <b>terraform {} -</b> Este é o bloco terraform e ele server justamente para configurar o próprio Terraform antes de qualquer recurso ser declarado. Esse bloco define configurações globais que afetam todo o comportamento do Terraform <br>
@@ -201,6 +206,7 @@ observação: Quando você não define uma VPC, esse security group é automatic
 <h4>Criando regras de entrada (inbound) e saida (outbound)</h4>
 
 É justamente em Inbound e Outbound que estabelecemos a comunicação entre os variados tipos de serviços fornecidos pela AWS. No terraform, o inboud é referenciado como ``ingress`` e o outbound por ``egress``. e dentro do bloco de cada um, adiconamos as configurações. 
+
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img20.png)
 
 ```
@@ -230,9 +236,11 @@ observação: Quando você não define uma VPC, esse security group é automatic
 para atribuir um nome ao security group, utilizamos o bloco ``tags``. 
 
 Definindo Tag no código
+
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img22.png)
 
 Tag Name
+
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img21.png)
 
 
@@ -257,6 +265,7 @@ O ``Cidr_block`` é um identificador de endereço de rede e também determina a 
 <b>Criação subnet</b>
 
 Vou criar aqui apenas uma subnet e dini-la para rodar na avaiability_zone a (us-east-1a).
+
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img24.png)
 
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img26.png)
@@ -292,6 +301,7 @@ resource "aws_internet_gateway" "my-ig" {
 
 <b>Criação Route Table</b>
 A Route Table determina para onde o tráfego de rede é direcionado, atuando como um controlador de tráfego da VPC. É nela que setamos o internet Gateway. 
+
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img29.png)
 
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img30.png)
@@ -309,6 +319,7 @@ route {
 
 <b>Associando Route Table a Subnet</b>
 Mesmo criando os resources (subnet, internet gateway e route table, é necessário associá-los através do bloco ``aws_route_table_association`` 
+
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img31.png)
 
 ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img32.png)
