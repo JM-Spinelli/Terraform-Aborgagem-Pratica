@@ -79,6 +79,7 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
 
  <h4>2º - Indo para o VS-Code</h4>
  No terminal, dentro da pasta <b>'projeto'</b>, abriremos o Vs code com o comando <b>code .</b>
+ 
  <img src="https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img02.jpeg" alt="img02" width="2000">
  
  
