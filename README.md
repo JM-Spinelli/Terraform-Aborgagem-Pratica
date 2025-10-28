@@ -15,11 +15,7 @@ Segue uma estrtura de Provider e Resource, sendo o Provider as infomações conf
  - <b>Terraform destroy -</b> Deleta toda a infraestrutura cloud criada via código<br>
  - <b>Terraform Output -</b> Exibe na tela informações definidas nos arquivos output<br>
  - <b>Terraform Show -</b> Mostra detalhes do arquivo Tfstate(arquivo de estado atual do código terraform), que é o código principal da infraestrutura em nuvem<br>
- - <b>Terraform * -</b> *<br>
- - <b>Terraform * -</b> *<br>
- - <b>Terraform * -</b> *<br>
- - <b>Terraform * -</b> *<br>
-
+ 
 <h3>Arquivos Terraform</h3>
 <p>O Terraform tem também sua estrutura de arquivos. A utilização desses arquivos pode sim variar conforme a escolha do profissional, no entanto, os arquivos comunmente utilizados são:</p>
 
@@ -255,9 +251,8 @@ Para criar uma rede e suas depedências (subnet, route table, Internet Gateway e
 <b>Criação VPC</b>
 
 Para criar a VPC, utilizamos o resouce  ``"aws_vpc" "Identificador_name" { cidr_block = "ip_rede"}``
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img23.png)
-
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img25.png)
+<img src="https://drive.google.com/uc?export=view&id=1HG_SeSvb3dnyELtXGFVwh7aDooba16a3" alt="Meu Print" width="2000">
+<img src="https://drive.google.com/uc?export=view&id=1G-g_DAN0V2x_x33sDieaWQwdEZG03pwx" alt="Meu Print" width="2000">
 
 ```
 resource "aws_vpc" "teste" {
@@ -269,8 +264,8 @@ O ``Cidr_block`` é um identificador de endereço de rede e também determina a 
 <b>Criação subnet</b>
 
 Vou criar aqui apenas uma subnet e dini-la para rodar na avaiability_zone a (us-east-1a).
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img24.png)
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img26.png)
+<img src="https://drive.google.com/uc?export=view&id=1HLtXNeqv1X2fSoT8br0oKvxPI6frJA7c" alt="Meu Print" width="2000">
+<img src="https://drive.google.com/uc?export=view&id=1sZpa_IxHXA5TmZGaHzeazGZW33qjbgPG" alt="Meu Print" width="2000">
 
 ```
 resource "aws_subnet" "Sub_a" {
@@ -286,9 +281,9 @@ tags = {
 <br>
 <b>Criação Internet Gateway</b>
 O internet Gateway (ig) é o recurso que permite a rede interna ter acesso a internet (rede externa). 
+<img src="https://drive.google.com/uc?export=view&id=1B53t6PgKudKJ-n-de6crfQpLwU0mA1nT" alt="Meu Print" width="2000">
 
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img27.png)
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img28.png)
+<img src="https://drive.google.com/uc?export=view&id=1LiCXOqEv9-r7rzn0PsaNeAc9g6Wv-p_c" alt="Meu Print" width="2000">
 
 ```
 resource "aws_internet_gateway" "my-ig" {
@@ -303,8 +298,8 @@ resource "aws_internet_gateway" "my-ig" {
 <b>Criação Route Table</b>
 A Route Table determina para onde o tráfego de rede é direcionado, atuando como um controlador de tráfego da VPC. É nela que setamos o internet Gateway. 
 
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img29.png)
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img30.png)
+<img src="https://drive.google.com/uc?export=view&id=1xrXwcsmiakUrEYgxld_Lb0emXD8XWte2" alt="Meu Print" width="2000">
+<img src="https://drive.google.com/uc?export=view&id=1VO87EfIeWLEMQymcoquEDdiK8YMf5yBN" alt="Meu Print" width="2000">
 
 ```
 resource "aws_route_table" "my-rt" {
@@ -319,10 +314,8 @@ route {
 
 <b>Associando Route Table a Subnet</b>
 Mesmo criando os resources (subnet, internet gateway e route table, é necessário associá-los através do bloco ``aws_route_table_association``
-
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img31.png)
-
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img32.png)
+<img src="https://drive.google.com/uc?export=view&id=1jL-mkGs_T1l_V63nbovw9JeY8tMfFtw8" alt="Meu Print" width="2000">
+<img src="https://drive.google.com/uc?export=view&id=1VeYATUuNtziAY4FZCg-zffKMjsYRZZud" alt="Meu Print" width="2000">
 
 ```
 resource "aws_route_table_association" "associate" {
