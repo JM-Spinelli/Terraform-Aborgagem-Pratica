@@ -74,7 +74,9 @@ Com o Vs Code já instalado, começamos a colocar a mão na massa com terraform.
 <h4>1º - Criando pasta para armazenamento de arquivos</h4>
 
 No meu sistema operacional, a fim de manter a melhor organização, iremos criar uma pasta para armazenar todos os arquivos de terraform em um só lugar. Para isso, criarei a pasta ``Projetos``.
-<img src="https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img1.png" alt="Meu Print" width="2000">
+<img src="https://drive.google.com/uc?export=view&id=1rtprCyYJ9gIXN2XlXSw8wtmBYoDZ9jJZ" alt="Meu Print" width="2000">
+
+
 
 
  <h4>2º - Indo para o VS-Code</h4>
