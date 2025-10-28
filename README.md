@@ -77,16 +77,15 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
 <img src="https://drive.google.com/uc?export=view&id=1rtprCyYJ9gIXN2XlXSw8wtmBYoDZ9jJZ" alt="Meu Print" width="2000">
 
 
-
-
  <h4>2º - Indo para o VS-Code</h4>
- No terminal, dentro da pasta <b>'projeto'</b>, abriremos o Vs code com o comando <b>code .</b>
  
- <img src="https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img02.jpeg" alt="img02" width="2000">
+ No terminal, dentro da pasta <b>'projeto'</b>, abriremos o Vs code com o comando ``<b>code .</b>``
+ <img src="https://drive.google.com/uc?export=view&id=1xloex7oevhK3cgNAqUI3HEw4SS73Vnw8" width="2000">
  
  
  VS Code já aberto ta pasta <b>'projetos'</b>
- <img src="https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img3.png" alt="Meu Print" width="2000">
+ <img src="https://drive.google.com/uc?export=view&id=1QsFVX_eiPXQwlEXeqxwf8VQypYhAB1jN" width="2000">
+
 
 <br>
  <h4>3º - Criando arquivo <b>main</b> </h4>
@@ -94,17 +93,15 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
   Para criarmos o arquivo main, basta gerarmos um novo arquivo no Vs code com o nome `` main.tf ``. No entanto, antes eu irei criar uma pasta chamada ``terraform`` dedicada para esse nosso primeiro projeto.<br>
   
   <b>3.1</b> - Pasta Criada
-  
-  <img src="https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img4.png" alt="Meu Print" width="2000">
+  <img src="https://drive.google.com/uc?export=view&id=1gy_IK5K2orgnmjiYZziXdH40LDv7mkIu" width="2000">
  
   <b>3.2</b> - Abrindo terminal e elevando user para root
-  <img src="https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img05.png" alt="Meu Print" width="2000">
-  <img src="https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img006.png" alt="Meu Print" width="2000">
-
+  <img src="https://drive.google.com/uc?export=view&id=1A2f-cu6hnKWSpOz_f00lP9rWt9IG3RsI" alt="Meu Print" width="2000">
+  <img src="https://drive.google.com/uc?export=view&id=1Gi_r9LOvpp6vR6lezbl0ivWuqtasdRpA" alt="Meu Print" width="2000">
 
   <b>3.3</b> - Arquivo criado a partir do comando ``touch main.tf``
-  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img007.png)
-  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img008.png)<br>
+  <img src="https://drive.google.com/uc?export=view&id=1CfZqQj-Z4Q6VOqP9ZUHxIQjfTdEYV24C" alt="Meu Print" width="2000">
+  <img src="https://drive.google.com/uc?export=view&id=1xN9dXO-vTtE_eA1lQ6_fITDGbWBZKjwl" alt="Meu Print" width="2000">
   Recomendo fazer desta forma, pois assim você conseguirá executar todos os comando do terraform sem a necessidade de a cada comando digitar ``sudo`` no início de cada comando. <br><br>
 
   <h4>4º - Difinindo as configurações principais do <b>main.tf</b></h4>
@@ -125,8 +122,7 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
 }
 ```
 Imagem exemplo
-
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img009.png)
+<img src="https://drive.google.com/uc?export=view&id=1hZp_vKtyKANCHjYE5YiylZH-DTWjebcw" alt="Meu Print" width="2000">
 
 <b>Explicando</b>
  - <b>terraform {} -</b> Este é o bloco terraform e ele server justamente para configurar o próprio Terraform antes de qualquer recurso ser declarado. Esse bloco define configurações globais que afetam todo o comportamento do Terraform <br>
@@ -139,11 +135,10 @@ Imagem exemplo
  Para que o terraform possa conversar com a console AWS, é necessário que seja criado um usuário (podendo ser uma Role ou um par de chaves) para que a infraestrutura seja provisionada via código. Sendo assim, você primeiro irá configurar um usuário no IAM da sua console e após ele estar criado, setar ele no terraform. 
 
  Usuario criado no IAM
+<img src="https://drive.google.com/uc?export=view&id=1Bh7jdSUDr4z9MVYPaJs3u_vAK4bLGIOA" alt="Meu Print" width="2000">
  
- ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img10.png)
-
  Definição de usário no código terraform
- ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img11.png)
+ <img src="https://drive.google.com/uc?export=view&id=1eRoJzpD_AZvmH1hIAXwGSklIW3vUG7yi" alt="Meu Print" width="2000">
 
  ```
 provider "aws" {
@@ -171,10 +166,10 @@ sudo ./aws/install
  Os resources - que são os recursos da AWS - é o que provisiona a infraestrtura da console aws. Para utilizarmos, usamos a seguinte estrtutura ``resource "tipo-de-recurso" "nome-recurso" {}``
 
  Como exemplo, EC2 lançada. Após o script pronto, iniciado o terraform (terraform init) e aplicado a código (terraform apply)
- ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img15.png)
-
+  <img src="https://drive.google.com/uc?export=view&id=1IAQR_19JkGVNGOf3Fw6EJ0AUEfjzbFs5" alt="Meu Print" width="2000">
+ 
   EC2 lançada na console AWS
-  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img14.png)
+  <img src="https://drive.google.com/uc?export=view&id=1etwYBw7jLWRoLd9kOo4p2CMzZEQ3Aeo4" alt="Meu Print" width="2000">
  
  ```
 resource "aws_instance" "Minha-EC2" {
@@ -191,7 +186,7 @@ Uma observação importante é que, exceto ao utilizar uma VPC Default (criada p
  <h3>4º Criando Security Group </h3>
  
  O security group é bem simples de lançar. Sem que o adicione a uma VPC ou Uma EC2, basta apenas duas configurações, a ``description`` e a ``name``. 
- ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img16.png)
+ <img src="https://drive.google.com/uc?export=view&id=1W8zV9LfWb-juB1cM4lr1jrTo6EfO2lXo" alt="Meu Print" width="2000">
  
  ```
  resource "aws_security_group" "SG-custom-2" {
@@ -204,10 +199,10 @@ observação: Quando você não define uma VPC, esse security group é automatic
  <h4>Adicioando a uma VPC </h4>
  
  Veja que neste exemplo eu irei adicionei uma VPC manualmente (uma VPC customizada criada por mim) e o terraform, ao eu executar um terraform apply, irá realizar um ``replaced``. Ou seja, irá derrubar o que está rodando para aplicar a nova alteração. Essa condição é algo que você tem que ter ciência quando estiver atuando em um ambiente produtivo.
- ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img17.png)
+ <img src="https://drive.google.com/uc?export=view&id=15HIj7Fpqq0gHUXO_yHE-pKh8O6Lef3YM" alt="Meu Print" width="2000">
 
   VPC alterada
-  ![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img19.png)
+  <img src="https://drive.google.com/uc?export=view&id=1F96El_efbJfzXfjyIpWildGJeLHnWzwO" alt="Meu Print" width="2000">
 
  ```
  resource "aws_security_group" "SG-custom-2" {
@@ -219,7 +214,7 @@ observação: Quando você não define uma VPC, esse security group é automatic
 <h4>Criando regras de entrada (inbound) e saida (outbound)</h4>
 
 É justamente em Inbound e Outbound que estabelecemos a comunicação entre os variados tipos de serviços fornecidos pela AWS. No terraform, o inboud é referenciado como ``ingress`` e o outbound por ``egress``. e dentro do bloco de cada um, adiconamos as configurações.
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img20.png)
+<img src="https://drive.google.com/uc?export=view&id=1nbezTkggjYwtV4WP98F1GAlmuyMeUjjl" alt="Meu Print" width="2000">
 
 ```
  resource "aws_security_group" "SG-custom-2" {
@@ -248,11 +243,10 @@ observação: Quando você não define uma VPC, esse security group é automatic
 para atribuir um nome ao security group, utilizamos o bloco ``tags``. 
 
 Definindo Tag no código
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img22.png)
+<img src="https://drive.google.com/uc?export=view&id=1oLu2f8BOtTR_UBqarESkGktTHUeNTyg-" alt="Meu Print" width="2000">
 
 Tag Name
-![Meu Print](https://github.com/JM-Spinelli/Minhas-Imagens/raw/main/img21.png)
-
+<img src="https://drive.google.com/uc?export=view&id=1yVfxeDS77qy1MOS5tAFrbqyb8gM0nEad" alt="Meu Print" width="2000">
 
 <h4>5º Criando VPC, Subnet e Internet Gateway</h4>
 
