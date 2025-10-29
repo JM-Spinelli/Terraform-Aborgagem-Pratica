@@ -72,7 +72,7 @@ sudo apt install code -y
 <h2 align="center">💻Mão na Massa com Terraform</h2>
 
 <b>1º - Criando pasta para armazenamento de arquivos</b><br>
-No meu sistema operacional, a fim de manter a melhor organização, iremos criar uma pasta para armazenar todos os arquivos de terraform em um só lugar. Para isso, criarei a pasta ``Projetos``.
+No meu sistema operacional, a fim de manter a melhor organização, irei criar uma pasta para armazenar todos os arquivos de terraform em um só lugar. Para isso, criarei a pasta ``Projetos``.
 <img src="https://drive.google.com/uc?export=view&id=1rtprCyYJ9gIXN2XlXSw8wtmBYoDZ9jJZ" alt="Meu Print" width="2000">
 
 <b>2º - Indo para o VS-Code</b><br>
