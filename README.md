@@ -31,14 +31,13 @@ Segue uma estrtura de Provider e Resource, sendo o Provider as configurações n
 
  <p>Estes arquivos devem ser manipulados sempre com bastante cuidado, pois representam diretamente o código da infraestrtutura executada no provedor cloud. Perder esses arquivos compromete a operação da infraestrutura em caso de qualquer incidente gerada no ambiente de TI.</p> 
 
-#
 
-<h3>Preparando o ambiente Terraform</h3>
+<h2 align="center">🕹Preparando o ambiente Terraform</h2>
 
 Para começo de uso do terraform, vamos realizar a instalação do Visual Studio no computador. Recomendo instalar no seu sitema operacinal de escolha. 
 Como estou usando o Ubuntu, sua instalação é muito simples.
 
-<h4>1 - Instalando VS code</h4>
+<h4>1º - Instalando VS code</h4>
 
 <h5>Comandos com permissão root:</h5> 
 
@@ -69,29 +68,21 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/code stable main" | 
 sudo apt update
 sudo apt install code -y
 ```
-#
-<h3>2 - Começando com Terraform </h3>
-Com o Vs Code já instalado, começamos a colocar a mão na massa com terraform. 
 
-<h4>1º - Criando pasta para armazenamento de arquivos</h4>
+<h2 align="center">💻Mão na Massa com Terraform</h2>
 
+<b>1º - Criando pasta para armazenamento de arquivos</b><br>
 No meu sistema operacional, a fim de manter a melhor organização, iremos criar uma pasta para armazenar todos os arquivos de terraform em um só lugar. Para isso, criarei a pasta ``Projetos``.
 <img src="https://drive.google.com/uc?export=view&id=1rtprCyYJ9gIXN2XlXSw8wtmBYoDZ9jJZ" alt="Meu Print" width="2000">
 
-
- <h4>2º - Indo para o VS-Code</h4>
- 
- No terminal, dentro da pasta <b>'projeto'</b>, abriremos o Vs code com o comando ``<b>code .</b>``
+<b>2º - Indo para o VS-Code</b><br>
+ No terminal, dentro da pasta <b>'projeto'</b>, abriremos o Vs code com o comando <b>``code .``</b>
  <img src="https://drive.google.com/uc?export=view&id=1xloex7oevhK3cgNAqUI3HEw4SS73Vnw8" width="750">
  
+ VS Code já aberto ta pasta <b>``'projetos'``</b>
+ <img src="https://drive.google.com/uc?export=view&id=1QsFVX_eiPXQwlEXeqxwf8VQypYhAB1jN" width="750"><br>
  
- VS Code já aberto ta pasta <b>'projetos'</b>
- <img src="https://drive.google.com/uc?export=view&id=1QsFVX_eiPXQwlEXeqxwf8VQypYhAB1jN" width="750">
-
-
-<br>
- <h4>3º - Criando arquivo <b>main</b> </h4>
-
+ <b>3º - Criando o arquivo <b>main</b> </b><br> 
   Para criarmos o arquivo main, basta gerarmos um novo arquivo no Vs code com o nome `` main.tf ``. No entanto, antes eu irei criar uma pasta chamada ``terraform`` dedicada para esse nosso primeiro projeto.<br>
   
   <b>3.1</b> - Pasta Criada
@@ -102,15 +93,14 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
   <img src="https://drive.google.com/uc?export=view&id=1lcxwpbJxDrwKEgVlNyeFt6vMrx4WE_Vg" alt="Meu Print" width="750">
   
   <b>3.3</b> - Arquivo criado a partir do comando ``touch main.tf``
-  <img src="https://drive.google.com/uc?export=view&id=1xN9dXO-vTtE_eA1lQ6_fITDGbWBZKjwl" alt="Meu Print" width="2000">
+  <img src="https://drive.google.com/uc?export=view&id=1UMiPF9sMpDNWQBiKoIi99AiZw9a_oXo7" alt="Meu Print" width="750"><br>
   Recomendo fazer desta forma, pois assim você conseguirá executar todos os comando do terraform sem a necessidade de a cada comando digitar ``sudo`` no início de cada comando. <br><br>
 
-  <h4>4º - Difinindo as configurações principais do <b>main.tf</b></h4>
-  Antes de começarmos a criar o recursos (resources) em si, primeiro precisamos criar as definições do provedor, de versão do terraform e estabelecer a comunicação com a nossa conta aws. 
+  <b>4º - Difinindo as configurações principais do <b>main.tf</b></b><br> 
+  Antes de começarmos a criar o recursos (resources) em si, primeiro precisamos criar as definições do provedor, de versão do terraform e estabelecer a comunicação com a nossa conta aws.<br>
 
-   <b>1º - Definição de ``provider`` e ``versao``</b>
-   
-  Para definir o provdor e a versão, estruturamos da seguinte forma
+   <b>4.1 - Definição de ``provider`` e ``versao``</b><br>
+   Para definir o provdor e a versão, estruturamos da seguinte forma
   ```
   terraform {
   required_providers {
@@ -132,7 +122,7 @@ Imagem exemplo<br>
  
  Veja, todas essa definições ficam dentro do bloco de terraform porque são informações necessárias para que o terraform funcione adequadamente. 
 
- <b>2º - Definição de usuário </b>
+ <b>4.2 - Definição de usuário </b><br>
  Para que o terraform possa conversar com a console AWS, é necessário que seja criado um usuário (podendo ser uma Role ou um par de chaves) para que a infraestrutura seja provisionada via código. Sendo assim, você primeiro irá configurar um usuário no IAM da sua console e após ele estar criado, setar ele no terraform. 
 
  Usuario criado no IAM<br>
@@ -151,31 +141,28 @@ Observação: A região é a mesma em que seu ambiente está executando. Eu colo
 
 Após gerado o par de chaves Key e configurado o usuário no bloco terraform, é necessário adicionar essas  informações no arquivo de configuração do AWS cli.
 
-<b>1º - Instalando o AWS cli</b>
+<b>4.2.1 - Instalando o AWS cli</b><br>
 Usar o comando: 
 ```
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
 ```
-<b>2º - Adicionando credenciais no arquivo de configuração da AWS</b>
-
+<b>4.2.2 - Adicionando credenciais no arquivo de configuração da AWS</b><br>
 Antes de efetivamente adicionar o as credenciais no arquivo de configuração, é necessário ver se já nao há chaves configuradas. para isso, utilizamos esses dois comandos: 
 
 ```nano ~/.aws/configure```
 
 `` nano ~/.aws/credentials``
 
-<b>2.1 - Limpeza de valores definidos</b> 
-
+<b>4.2.2.1 - Limpeza de valores definidos</b><br>
 Para realizar a limpeza de valores ja definidos nesses arquivos de configuração, utilizamos os comandos: 
 
 ``rm -f  ~/.aws/config ``
 
 ``rm -f ~/.aws/credentials`` 
 
-<b>2.2 - Definindo os valores nos arquivos de configuração</b>
-
+<b>4.2.2.2 - Definindo os valores nos arquivos de configuração</b><br>
 Para definir os valores gerados pelo user do IAM nos arquivos de configuração, utilizamos o seguinte comando:
 
 ``aws configure --profile "seu usuario IAM"`` 
