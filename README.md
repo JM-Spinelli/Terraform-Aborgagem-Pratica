@@ -229,8 +229,8 @@ observação: Quando você não define uma VPC, esse security group é automatic
 ```
 <h4>Criando regras de entrada (inbound) e saida (outbound)</h4>
 
-É justamente em Inbound e Outbound que estabelecemos a comunicação entre os variados tipos de serviços fornecidos pela AWS. No terraform, o inboud é referenciado como ``ingress`` e o outbound por ``egress``. e dentro do bloco de cada um, adiconamos as configurações.
-<img src="https://drive.google.com/uc?export=view&id=1nbezTkggjYwtV4WP98F1GAlmuyMeUjjl" alt="Meu Print" width="2000">
+É justamente em Inbound e Outbound que estabelecemos a comunicação entre os variados tipos de serviços fornecidos pela AWS. No terraform, o inboud é referenciado como ``ingress`` e o outbound por ``egress``. e dentro do bloco de cada um, adiconamos as configurações.<br>
+<img src="https://drive.google.com/uc?export=view&id=1nbezTkggjYwtV4WP98F1GAlmuyMeUjjl" alt="Meu Print" width="750">
 
 ```
  resource "aws_security_group" "SG-custom-2" {
@@ -258,11 +258,11 @@ observação: Quando você não define uma VPC, esse security group é automatic
 ```
 para atribuir um nome ao security group, utilizamos o bloco ``tags``. 
 
-Definindo Tag no código
-<img src="https://drive.google.com/uc?export=view&id=1oLu2f8BOtTR_UBqarESkGktTHUeNTyg-" alt="Meu Print" width="2000">
+Definindo Tag no código<br>
+<img src="https://drive.google.com/uc?export=view&id=1oLu2f8BOtTR_UBqarESkGktTHUeNTyg-" alt="Meu Print" width="750">
 
-Tag Name
-<img src="https://drive.google.com/uc?export=view&id=1yVfxeDS77qy1MOS5tAFrbqyb8gM0nEad" alt="Meu Print" width="2000">
+Tag Name<br>
+<img src="https://drive.google.com/uc?export=view&id=1yVfxeDS77qy1MOS5tAFrbqyb8gM0nEad" alt="Meu Print" width="750">
 
 <h4>5º Criando VPC, Subnet e Internet Gateway</h4>
 
@@ -270,9 +270,9 @@ Para criar uma rede e suas depedências (subnet, route table, Internet Gateway e
 
 <b>Criação VPC</b>
 
-Para criar a VPC, utilizamos o resouce  ``"aws_vpc" "Identificador_name" { cidr_block = "ip_rede"}``
-<img src="https://drive.google.com/uc?export=view&id=1HG_SeSvb3dnyELtXGFVwh7aDooba16a3" alt="Meu Print" width="2000">
-<img src="https://drive.google.com/uc?export=view&id=1G-g_DAN0V2x_x33sDieaWQwdEZG03pwx" alt="Meu Print" width="2000">
+Para criar a VPC, utilizamos o resouce  ``"aws_vpc" "Identificador_name" { cidr_block = "ip_rede"}``<br>
+<img src="https://drive.google.com/uc?export=view&id=1HG_SeSvb3dnyELtXGFVwh7aDooba16a3" alt="Meu Print" width="750">
+<img src="https://drive.google.com/uc?export=view&id=1G-g_DAN0V2x_x33sDieaWQwdEZG03pwx" alt="Meu Print" width="750">
 
 ```
 resource "aws_vpc" "teste" {
@@ -283,9 +283,9 @@ O ``Cidr_block`` é um identificador de endereço de rede e também determina a 
 
 <b>Criação subnet</b>
 
-Vou criar aqui apenas uma subnet e dini-la para rodar na avaiability_zone a (us-east-1a).
-<img src="https://drive.google.com/uc?export=view&id=1HLtXNeqv1X2fSoT8br0oKvxPI6frJA7c" alt="Meu Print" width="2000">
-<img src="https://drive.google.com/uc?export=view&id=1sZpa_IxHXA5TmZGaHzeazGZW33qjbgPG" alt="Meu Print" width="2000">
+Vou criar aqui apenas uma subnet e dini-la para rodar na avaiability_zone a (us-east-1a).<br>
+<img src="https://drive.google.com/uc?export=view&id=1HLtXNeqv1X2fSoT8br0oKvxPI6frJA7c" alt="Meu Print" width="750">
+<img src="https://drive.google.com/uc?export=view&id=1sZpa_IxHXA5TmZGaHzeazGZW33qjbgPG" alt="Meu Print" width="750">
 
 ```
 resource "aws_subnet" "Sub_a" {
@@ -300,10 +300,10 @@ tags = {
 ```
 <br>
 <b>Criação Internet Gateway</b>
-O internet Gateway (ig) é o recurso que permite a rede interna ter acesso a internet (rede externa). 
-<img src="https://drive.google.com/uc?export=view&id=1B53t6PgKudKJ-n-de6crfQpLwU0mA1nT" alt="Meu Print" width="2000">
+O internet Gateway (ig) é o recurso que permite a rede interna ter acesso a internet (rede externa).<br>
+<img src="https://drive.google.com/uc?export=view&id=1B53t6PgKudKJ-n-de6crfQpLwU0mA1nT" alt="Meu Print" width="750">
 
-<img src="https://drive.google.com/uc?export=view&id=1LiCXOqEv9-r7rzn0PsaNeAc9g6Wv-p_c" alt="Meu Print" width="2000">
+<img src="https://drive.google.com/uc?export=view&id=1LiCXOqEv9-r7rzn0PsaNeAc9g6Wv-p_c" alt="Meu Print" width="750">
 
 ```
 resource "aws_internet_gateway" "my-ig" {
@@ -316,10 +316,10 @@ resource "aws_internet_gateway" "my-ig" {
 ```
 
 <b>Criação Route Table</b>
-A Route Table determina para onde o tráfego de rede é direcionado, atuando como um controlador de tráfego da VPC. É nela que setamos o internet Gateway. 
+A Route Table determina para onde o tráfego de rede é direcionado, atuando como um controlador de tráfego da VPC. É nela que setamos o internet Gateway.<br>
 
-<img src="https://drive.google.com/uc?export=view&id=1xrXwcsmiakUrEYgxld_Lb0emXD8XWte2" alt="Meu Print" width="2000">
-<img src="https://drive.google.com/uc?export=view&id=1VO87EfIeWLEMQymcoquEDdiK8YMf5yBN" alt="Meu Print" width="2000">
+<img src="https://drive.google.com/uc?export=view&id=1xrXwcsmiakUrEYgxld_Lb0emXD8XWte2" alt="Meu Print" width="750">
+<img src="https://drive.google.com/uc?export=view&id=1VO87EfIeWLEMQymcoquEDdiK8YMf5yBN" alt="Meu Print" width="750">
 
 ```
 resource "aws_route_table" "my-rt" {
