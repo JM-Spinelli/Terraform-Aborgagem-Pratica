@@ -202,7 +202,7 @@ Para definir os valores gerados pelo user do IAM nos arquivos de configuração,
 ``aws configure --profile "seu usuario IAM"`` 
 <img src="https://drive.google.com/uc?export=view&id=1R84unwmH_JrJPyfFJoeMIsmz0pnFleC0" alt="Meu Print" width="750">
 
-<h2 align="center">📚Lançando Recursos na AWS</h2> 
+<h2 align="center">🚀Lançando Recursos na AWS</h2> 
 
 <b>1º - Lançando a EC2</b><br>
 Os resources - que são os recursos da AWS - é o que provisiona a infraestrtura da console aws. Para utilizarmos, usamos a seguinte estrtutura ``resource "tipo-de-recurso" "nome-recurso" {}``<br>
