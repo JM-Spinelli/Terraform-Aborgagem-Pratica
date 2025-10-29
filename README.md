@@ -100,7 +100,7 @@ No meu sistema operacional, a fim de manter a melhor organização, irei criar u
   Antes de começarmos a criar o recursos (resources) em si, primeiro precisamos criar as definições do provedor, de versão do terraform e estabelecer a comunicação com a nossa conta aws.<br>
 
    <b>4.1 - Definição de ``provider`` e ``versao``</b><br>
-   Para definir o provdor e a versão, estruturamos da seguinte forma
+   Para definir o provedor e a versão, estruturamos da seguinte forma
   ```
   terraform {
   required_providers {
