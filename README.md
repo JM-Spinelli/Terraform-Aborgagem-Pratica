@@ -123,10 +123,44 @@ Imagem exemplo<br>
  Veja, todas essa definições ficam dentro do bloco de terraform porque são informações necessárias para que o terraform funcione adequadamente. 
 
  <b>4.2 - Definição de usuário </b><br>
- Para que o terraform possa conversar com a console AWS, é necessário que seja criado um usuário (podendo ser uma Role ou um par de chaves) para que a infraestrutura seja provisionada via código. Sendo assim, você primeiro irá configurar um usuário no IAM da sua console e após ele estar criado, setar ele no terraform. 
-
+ Para que o terraform possa conversar com a console AWS, é necessário que seja criado um usuário (podendo ser uma Role ou um par de chaves) para que a infraestrutura seja provisionada via código. Sendo assim, você primeiro irá configurar um usuário no IAM da sua console e após ele estar criado, setar ele no terraform. <br>
+ 
  Usuario criado no IAM<br>
-<img src="https://drive.google.com/uc?export=view&id=1Bh7jdSUDr4z9MVYPaJs3u_vAK4bLGIOA" alt="Meu Print" width="750">
+<img src="https://drive.google.com/uc?export=view&id=1Bh7jdSUDr4z9MVYPaJs3u_vAK4bLGIOA" alt="Meu Print" width="750"><br>
+
+ Para que as ações realizadas no terraform sejam executadas com sucesso, é necessário criar uma policy manualmente no user IAM e adicionar nelas todas as informações necessárias.
+ <img src="https://drive.google.com/uc?export=view&id=1H8rCH1WYkiCNyC6wS43VNf8uv5eJqp-8" alt="Meu Print" width="750"><br>
+ ```
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"iam:GetRole",
+				"iam:ListRolePolicies",
+				"iam:GetRolePolicy",
+				"iam:ListAttachedRolePolicies",
+				"iam:GetPolicy",
+				"iam:GetPolicyVersion",
+				"iam:GetInstanceProfile",
+				"iam:PassRole",
+				"iam:RemoveRoleFromInstanceProfile",
+				"iam:DeleteInstanceProfile",
+				"iam:ListInstanceProfilesForRole",
+				"iam:DetachRolePolicy",
+				"iam:DeleteRole"
+			],
+			"Resource": [
+				"arn:aws:iam::'Id da sua conta':role/Role-ssm",
+				"arn:aws:iam::'Id da sua conta':instance-profile/Role-ssm",
+				"arn:aws:iam::'Id da sua conta':role/Role-ssm"
+			]
+		}
+	]
+}
+```
+
  
  Definição de usário no código terraform<br>
  <img src="https://drive.google.com/uc?export=view&id=1eRoJzpD_AZvmH1hIAXwGSklIW3vUG7yi" alt="Meu Print" width="750">
@@ -137,32 +171,32 @@ profile = "jm-tf"
 region = "us-east-1"
 }
 ```
-Observação: A região é a mesma em que seu ambiente está executando. Eu coloquei us-east-1, por a região em que minha infra esta.
+<b>Observação:</b> A região é a mesma em que seu ambiente está executando. Eu coloquei us-east-1, por a região em que minha infra esta.
 
 Após gerado o par de chaves Key e configurado o usuário no bloco terraform, é necessário adicionar essas  informações no arquivo de configuração do AWS cli.
 
-<b>4.2.1 - Instalando o AWS cli</b><br>
+<b>4.3 - Instalando o AWS cli</b><br>
 Usar o comando: 
 ```
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
 ```
-<b>4.2.2 - Adicionando credenciais no arquivo de configuração da AWS</b><br>
+<b>4.3.1 - Adicionando credenciais no arquivo de configuração da AWS</b><br>
 Antes de efetivamente adicionar o as credenciais no arquivo de configuração, é necessário ver se já nao há chaves configuradas. para isso, utilizamos esses dois comandos: 
 
 ``nano ~/.aws/configure``
 
 ``nano ~/.aws/credentials``
 
-<b>4.2.2.1 - Limpeza de valores definidos</b><br>
+<b>4.3.2 - Limpeza de valores definidos</b><br>
 Para realizar a limpeza de valores ja definidos nesses arquivos de configuração, utilizamos os comandos: 
 
 ``rm -f  ~/.aws/config ``
 
 ``rm -f ~/.aws/credentials`` 
 
-<b>4.2.2.2 - Definindo os valores nos arquivos de configuração</b><br>
+<b>4.3.3 - Definindo os valores nos arquivos de configuração</b><br>
 Para definir os valores gerados pelo user do IAM nos arquivos de configuração, utilizamos o seguinte comando:
 
 ``aws configure --profile "seu usuario IAM"`` 
