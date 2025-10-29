@@ -1,8 +1,12 @@
-``Repositorio Dedicado a evolução em Terraform`` 
+<h1 align="center">📚Conhecendo Terraform</h1>
+
+
+<h3>Uma Breve explicação</h3> 
 
 <p>O Terraform é uma ferramenta de Infraestrutura como Código (IaC), ou seja, através de código é  possível provisionar e gerenciar infraestrutura em nuvem e local de forma segura e eficiente.<br>
-Segue uma estrtura de Provider e Resource, sendo o Provider as infomações configurações necessárias para se conectar ao provedor e a o Resourve as configurações feitas para provisionar a infraestrtura na nuvem escolhida</p>
+Segue uma estrtura de Provider e Resource, sendo o Provider as configurações necessárias para se conectar ao provedor e o Resourve as configurações feitas para provisionar a infraestrtura na nuvem escolhida</p>
 
+#
 <h3>Comandos Terraform</h3>
 
 <h4>Principais Comandos</h4>
@@ -16,12 +20,14 @@ Segue uma estrtura de Provider e Resource, sendo o Provider as infomações conf
  - <b>Terraform Output -</b> Exibe na tela informações definidas nos arquivos output<br>
  - <b>Terraform Show -</b> Mostra detalhes do arquivo Tfstate(arquivo de estado atual do código terraform), que é o código principal da infraestrutura em nuvem<br>
  
+ #
+ 
 <h3>Arquivos Terraform</h3>
 <p>O Terraform tem também sua estrutura de arquivos. A utilização desses arquivos pode sim variar conforme a escolha do profissional, no entanto, os arquivos comunmente utilizados são:</p>
 
  - <b>main.tf -</b> Como o prórpio nome diz, é o arquivo principal. É nele que são configurados os recursos que mais tarde construirão a infraestrtura cloud.<br>
- - <b>terraform.tfstate -</b> Esse arquivo é um espelho exato do main.tf após executado. Ele presenta o arquivo de estado atual da infraestrutura cloud criada.<br>
- - <b>terraform.tfstate.backup  -</b> É o arquivo de backup do tfstate. Ou seja, caso haja uma alteração errônea no terraform.tfstate ou se perca o arquivo, basta utilizar o tfstate.backup para reestabelecer a infraestrutura.<br>
+ - <b>terraform.tfstate -</b> Esse arquivo é um espelho exato do ``main.tf`` após executado. Ele presenta o arquivo de estado atual da infraestrutura cloud criada.<br>
+ - <b>terraform.tfstate.backup  -</b> É o arquivo de backup do ``tfstate``. Ou seja, caso haja uma alteração errônea no terraform.tfstate ou se perca o arquivo, basta utilizar o tfstate.backup para reestabelecer a infraestrutura.<br>
 
  <p>Estes arquivos devem ser manipulados sempre com bastante cuidado, pois representam diretamente o código da infraestrtutura executada no provedor cloud. Perder esses arquivos compromete a operação da infraestrutura em caso de qualquer incidente gerada no ambiente de TI.</p> 
 
