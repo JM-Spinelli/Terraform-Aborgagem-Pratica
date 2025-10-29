@@ -12,7 +12,7 @@ Segue uma estrutura de Provider e Resource, sendo o Provider as configurações 
 <h4>Principais Comandos</h4>
 
  - <b>Terraform init -</b> Inicia o Terraform<br>
- - <b>Terraform validate -</b> Faz a valdação do código para determinar se está tudo correto<br>
+ - <b>Terraform validate -</b> Faz a validação do código para determinar se está tudo correto<br>
  - <b>Terraform plan -</b> Apresenta as alterações realizadas no código antes de aplicar<br>
  - <b>Terraform apply -</b> Aplica as alterações realizadas no código Terraform<br>
  - <b>Terraform refresh -</b> Faz com que o sistema entenda modificações realizadas no código<br>
