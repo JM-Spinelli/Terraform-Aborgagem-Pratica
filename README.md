@@ -116,8 +116,8 @@ Imagem exemplo<br>
 <img src="https://drive.google.com/uc?export=view&id=16fRSnKmg0CxLA_ACextXLqAHlrpRBblL" alt="Meu Print" width="700"><br>
 
 <b>Explicando</b>
- - <b>terraform {} -</b> Este é o bloco terraform e ele server justamente para configurar o próprio Terraform antes de qualquer recurso ser declarado. Esse bloco define configurações globais que afetam todo o comportamento do Terraform <br>
- - <b>required_providers -</b> É dentro dessa estrutura que eu informo o meu terraform que provider eu vou utilizar (Aws, Azure, Gcp etc), sua origem (caminho se onde vai buscar seus pacotes e dependências, e a última versão lançada do pelo provedor, que contempla as últimas atualizações.<br>
+ - <b>terraform {} -</b> Este é o bloco terraform e ele serve justamente para configurar o próprio Terraform antes de qualquer recurso ser declarado. Esse bloco define configurações globais que afetam todo o comportamento do Terraform <br>
+ - <b>required_providers -</b> É dentro dessa estrutura que eu informo ao meu terraform que provider eu vou utilizar (Aws, Azure, Gcp etc), sua origem (caminho de onde vai buscar seus pacotes e dependências, e a última versão lançada do pelo provedor, que contempla as últimas atualizações.<br>
  - <b>required_version -</b> É o local onde defino qual a versão do terraform eu utilizarei. É recomendável sempre utilizar a última lançada para pegar todas as atualizações<br>
  
  Veja, todas essa definições ficam dentro do bloco de terraform porque são informações necessárias para que o terraform funcione adequadamente. 
@@ -128,7 +128,7 @@ Imagem exemplo<br>
  Usuario criado no IAM<br>
 <img src="https://drive.google.com/uc?export=view&id=1Bh7jdSUDr4z9MVYPaJs3u_vAK4bLGIOA" alt="Meu Print" width="750"><br>
 
- Para que as ações realizadas no terraform sejam executadas com sucesso, é necessário criar uma policy manualmente no user IAM e adicionar nelas todas as informações necessárias.
+ Para que as ações realizadas no terraform sejam executadas com sucesso, é necessário criar uma policy manualmente no user IAM e adicionar nela todas as informações necessárias.
  <img src="https://drive.google.com/uc?export=view&id=1H8rCH1WYkiCNyC6wS43VNf8uv5eJqp-8" alt="Meu Print" width="750"><br>
  ```
 {
@@ -171,9 +171,9 @@ profile = "jm-tf"
 region = "us-east-1"
 }
 ```
-<b>Observação:</b> A região é a mesma em que seu ambiente está executando. Eu coloquei us-east-1, por a região em que minha infra esta.
+<b>Observação:</b> A região é a mesma em que seu ambiente está executando. Eu coloquei us-east-1, por ser a região em que minha infra esta.
 
-Após gerado o par de chaves Key e configurado o usuário no bloco terraform, é necessário adicionar essas  informações no arquivo de configuração do AWS cli.
+Após gerado o par de chaves Key e configurado o usuário no bloco terraform, é necessário adicionar essas informações no arquivo de configuração do AWS cli.
 
 <b>4.3 - Instalando o AWS cli</b><br>
 Usar o comando: 
@@ -183,7 +183,7 @@ unzip awscliv2.zip
 sudo ./aws/install
 ```
 <b>4.3.1 - Adicionando credenciais no arquivo de configuração da AWS</b><br>
-Antes de efetivamente adicionar o as credenciais no arquivo de configuração, é necessário ver se já nao há chaves configuradas. para isso, utilizamos esses dois comandos: 
+Antes de efetivamente adicionar as credenciais no arquivo de configuração, é necessário ver se já nao há chaves configuradas. para isso, utilizamos esses dois comandos: 
 
 ``nano ~/.aws/configure``
 
@@ -207,7 +207,7 @@ Para definir os valores gerados pelo user do IAM nos arquivos de configuração,
 <b>1º - Lançando a EC2</b><br>
 Os resources - que são os recursos da AWS - é o que provisiona a infraestrtura da console aws. Para utilizarmos, usamos a seguinte estrtutura ``resource "tipo-de-recurso" "nome-recurso" {}``<br>
 
- Como exemplo, EC2 lançada. Após o script pronto, iniciado o terraform ``(terraform init)`` e aplicado a código ``(terraform apply)``
+ Como exemplo, EC2 lançada. Após o script pronto, iniciado o terraform ``(terraform init)`` e aplicado o código ``(terraform apply)``
   <img src="https://drive.google.com/uc?export=view&id=1IAQR_19JkGVNGOf3Fw6EJ0AUEfjzbFs5" alt="Meu Print" width="750">
  
   EC2 lançada na console AWS<br>
@@ -224,7 +224,7 @@ resource "aws_instance" "Minha-EC2" {
 Uma observação importante é que, exceto ao utilizar uma VPC Default (criada pela própria AWS), ao lançar uma EC2 é necessário definir uma Subnet_id e um Security_Group para que a EC2 seja lançada com sucesso.<br>
 
  <b>2º - Criando Security Group</b><br>
- O security group é bem simples de lançar, bastando configurar apenas duas configurações, a ``description`` e a ``name``.<br>.
+ O security group é bem simples de lançar, bastando definir apenas duas configurações, a ``description`` e a ``name``.<br>.
  <img src="https://drive.google.com/uc?export=view&id=1W8zV9LfWb-juB1cM4lr1jrTo6EfO2lXo" alt="Meu Print" width="750">
  
  ```
@@ -233,10 +233,10 @@ Uma observação importante é que, exceto ao utilizar uma VPC Default (criada p
   name = "SG-custom-2"
  }
 ```
-observação: Quando você não define uma VPC, esse security group é automaticamente associado a uma VPC default
+<b>observação:</b> Quando você não define uma VPC, esse security group é automaticamente associado a uma VPC default
 
- <b>3º - Adicioando a uma VPC</b><br>
- Veja que neste exemplo eu irei adicionei uma VPC manualmente (uma VPC customizada criada por mim) e o terraform, ao executar um terraform apply, irá realizar um ``replaced``. Ou seja, irá derrubar o que está rodando para aplicar a nova alteração. Essa condição é algo que você tem que ter ciência quando estiver atuando em um ambiente produtivo.<br>
+ <b>3º - Adicionando a uma VPC</b><br>
+ Veja que neste exemplo eu adicionei uma VPC manualmente (uma VPC customizada criada por mim) e o terraform, ao executar um terraform apply, irá realizar um ``replaced``. Ou seja, irá derrubar o que está rodando para aplicar a nova alteração. Essa condição é algo que você tem que ter ciência quando estiver atuando em um ambiente produtivo.<br>
  <img src="https://drive.google.com/uc?export=view&id=15HIj7Fpqq0gHUXO_yHE-pKh8O6Lef3YM" alt="Meu Print" width="750">
 
   VPC alterada<br>
@@ -250,7 +250,7 @@ observação: Quando você não define uma VPC, esse security group é automatic
  }
 ```
 <b>4 º - Criando regras de entrada (inbound) e saida (outbound)</b><br>
-É justamente em Inbound e Outbound que estabelecemos a comunicação entre os variados tipos de serviços fornecidos pela AWS. No terraform, o inboud é referenciado como ``ingress`` e o outbound por ``egress``. e dentro do bloco de cada um, adiconamos as configurações.<br>
+É justamente em Inbound e Outbound que estabelecemos a comunicação entre os variados tipos de serviços fornecidos pela AWS. No terraform, o inboud é referenciado como ``ingress`` e o outbound por ``egress``. e dentro do bloco de cada um, adicionamos as configurações.<br>
 <img src="https://drive.google.com/uc?export=view&id=1nbezTkggjYwtV4WP98F1GAlmuyMeUjjl" alt="Meu Print" width="750">
 
 ```
@@ -285,7 +285,7 @@ Definindo Tag no código<br>
 Tag Name<br>
 <img src="https://drive.google.com/uc?export=view&id=1yVfxeDS77qy1MOS5tAFrbqyb8gM0nEad" alt="Meu Print" width="750">
 
-<b>5º Criando VPC, Subnet e Internet Gateway</b><br>
+<b>5º Criando a VPC, Subnet e Internet Gateway</b><br>
 Para criar uma rede e suas depedências (subnet, route table, Internet Gateway etc), é necessária a criação de diversos blocos de resources. Abaixo, segue contrução total da rede. 
 
 <b>5.1 - Criação VPC</b><br>
