@@ -76,11 +76,11 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
  <h4>2º - Indo para o VS-Code</h4>
  
  No terminal, dentro da pasta <b>'projeto'</b>, abriremos o Vs code com o comando ``<b>code .</b>``
- <img src="https://drive.google.com/uc?export=view&id=1xloex7oevhK3cgNAqUI3HEw4SS73Vnw8" width="2000">
+ <img src="https://drive.google.com/uc?export=view&id=1xloex7oevhK3cgNAqUI3HEw4SS73Vnw8" width="750">
  
  
  VS Code já aberto ta pasta <b>'projetos'</b>
- <img src="https://drive.google.com/uc?export=view&id=1QsFVX_eiPXQwlEXeqxwf8VQypYhAB1jN" width="2000">
+ <img src="https://drive.google.com/uc?export=view&id=1QsFVX_eiPXQwlEXeqxwf8VQypYhAB1jN" width="750">
 
 
 <br>
@@ -89,14 +89,13 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
   Para criarmos o arquivo main, basta gerarmos um novo arquivo no Vs code com o nome `` main.tf ``. No entanto, antes eu irei criar uma pasta chamada ``terraform`` dedicada para esse nosso primeiro projeto.<br>
   
   <b>3.1</b> - Pasta Criada
-  <img src="https://drive.google.com/uc?export=view&id=1gy_IK5K2orgnmjiYZziXdH40LDv7mkIu" width="2000">
+  <img src="https://drive.google.com/uc?export=view&id=1gy_IK5K2orgnmjiYZziXdH40LDv7mkIu" width="1750">
  
   <b>3.2</b> - Abrindo terminal e elevando user para root
-  <img src="https://drive.google.com/uc?export=view&id=1A2f-cu6hnKWSpOz_f00lP9rWt9IG3RsI" alt="Meu Print" width="2000">
-  <img src="https://drive.google.com/uc?export=view&id=1Gi_r9LOvpp6vR6lezbl0ivWuqtasdRpA" alt="Meu Print" width="2000">
-
+  <img src="https://drive.google.com/uc?export=view&id=1iUNZVX3hBF38jkQar3RYXGJ3ZMOfNfa0" alt="Meu Print" width="750">
+  <img src="https://drive.google.com/uc?export=view&id=1lcxwpbJxDrwKEgVlNyeFt6vMrx4WE_Vg" alt="Meu Print" width="750">
+  
   <b>3.3</b> - Arquivo criado a partir do comando ``touch main.tf``
-  <img src="https://drive.google.com/uc?export=view&id=1CfZqQj-Z4Q6VOqP9ZUHxIQjfTdEYV24C" alt="Meu Print" width="2000">
   <img src="https://drive.google.com/uc?export=view&id=1xN9dXO-vTtE_eA1lQ6_fITDGbWBZKjwl" alt="Meu Print" width="2000">
   Recomendo fazer desta forma, pois assim você conseguirá executar todos os comando do terraform sem a necessidade de a cada comando digitar ``sudo`` no início de cada comando. <br><br>
 
@@ -117,8 +116,8 @@ No meu sistema operacional, a fim de manter a melhor organização, iremos criar
   required_version = ">= 1.12.2"
 }
 ```
-Imagem exemplo
-<img src="https://drive.google.com/uc?export=view&id=1hZp_vKtyKANCHjYE5YiylZH-DTWjebcw" alt="Meu Print" width="2000">
+Imagem exemplo<br>
+<img src="https://drive.google.com/uc?export=view&id=16fRSnKmg0CxLA_ACextXLqAHlrpRBblL" alt="Meu Print" width="700"><br>
 
 <b>Explicando</b>
  - <b>terraform {} -</b> Este é o bloco terraform e ele server justamente para configurar o próprio Terraform antes de qualquer recurso ser declarado. Esse bloco define configurações globais que afetam todo o comportamento do Terraform <br>
@@ -130,11 +129,11 @@ Imagem exemplo
  <b>2º - Definição de usuário </b>
  Para que o terraform possa conversar com a console AWS, é necessário que seja criado um usuário (podendo ser uma Role ou um par de chaves) para que a infraestrutura seja provisionada via código. Sendo assim, você primeiro irá configurar um usuário no IAM da sua console e após ele estar criado, setar ele no terraform. 
 
- Usuario criado no IAM
-<img src="https://drive.google.com/uc?export=view&id=1Bh7jdSUDr4z9MVYPaJs3u_vAK4bLGIOA" alt="Meu Print" width="2000">
+ Usuario criado no IAM<br>
+<img src="https://drive.google.com/uc?export=view&id=1Bh7jdSUDr4z9MVYPaJs3u_vAK4bLGIOA" alt="Meu Print" width="750">
  
- Definição de usário no código terraform
- <img src="https://drive.google.com/uc?export=view&id=1eRoJzpD_AZvmH1hIAXwGSklIW3vUG7yi" alt="Meu Print" width="2000">
+ Definição de usário no código terraform<br>
+ <img src="https://drive.google.com/uc?export=view&id=1eRoJzpD_AZvmH1hIAXwGSklIW3vUG7yi" alt="Meu Print" width="750">
 
  ```
 provider "aws" {
@@ -146,14 +145,35 @@ Observação: A região é a mesma em que seu ambiente está executando. Eu colo
 
 Após gerado o par de chaves Key e configurado o usuário no bloco terraform, é necessário adicionar essas  informações no arquivo de configuração do AWS cli.
 
-1º - Instalando o AWS cli 
+<b>1º - Instalando o AWS cli</b>
 Usar o comando: 
 ```
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
 ```
-2º - Adicionando credenciais no arquivo de configuração da AWS 
+<b>2º - Adicionando credenciais no arquivo de configuração da AWS</b>
+
+Antes de efetivamente adicionar o as credenciais no arquivo de configuração, é necessário ver se já nao há chaves configuradas. para isso, utilizamos esses dois comandos: 
+
+```nano ~/.aws/configure```
+
+`` nano ~/.aws/credentials``
+
+<b>2.1 - Limpeza de valores definidos</b> 
+
+Para realizar a limpeza de valores ja definidos nesses arquivos de configuração, utilizamos os comandos: 
+
+``rm -f  ~/.aws/config ``
+
+``rm -f ~/.aws/credentials`` 
+
+<b>2.2 - Definindo os valores nos arquivos de configuração</b>
+
+Para definir os valores gerados pelo user do IAM nos arquivos de configuração, utilizamos o seguinte comando:
+
+``aws configure --profile "seu usuario IAM"`` 
+<img src="https://drive.google.com/uc?export=view&id=1R84unwmH_JrJPyfFJoeMIsmz0pnFleC0" alt="Meu Print" width="750">
 
 #
 
@@ -162,10 +182,10 @@ sudo ./aws/install
  Os resources - que são os recursos da AWS - é o que provisiona a infraestrtura da console aws. Para utilizarmos, usamos a seguinte estrtutura ``resource "tipo-de-recurso" "nome-recurso" {}``
 
  Como exemplo, EC2 lançada. Após o script pronto, iniciado o terraform (terraform init) e aplicado a código (terraform apply)
-  <img src="https://drive.google.com/uc?export=view&id=1IAQR_19JkGVNGOf3Fw6EJ0AUEfjzbFs5" alt="Meu Print" width="2000">
+  <img src="https://drive.google.com/uc?export=view&id=1IAQR_19JkGVNGOf3Fw6EJ0AUEfjzbFs5" alt="Meu Print" width="750">
  
-  EC2 lançada na console AWS
-  <img src="https://drive.google.com/uc?export=view&id=1etwYBw7jLWRoLd9kOo4p2CMzZEQ3Aeo4" alt="Meu Print" width="2000">
+  EC2 lançada na console AWS<br>
+  <img src="https://drive.google.com/uc?export=view&id=1etwYBw7jLWRoLd9kOo4p2CMzZEQ3Aeo4" alt="Meu Print" width="750">
  
  ```
 resource "aws_instance" "Minha-EC2" {
@@ -181,8 +201,8 @@ Uma observação importante é que, exceto ao utilizar uma VPC Default (criada p
 
  <h3>4º Criando Security Group </h3>
  
- O security group é bem simples de lançar. Sem que o adicione a uma VPC ou Uma EC2, basta apenas duas configurações, a ``description`` e a ``name``. 
- <img src="https://drive.google.com/uc?export=view&id=1W8zV9LfWb-juB1cM4lr1jrTo6EfO2lXo" alt="Meu Print" width="2000">
+ O security group é bem simples de lançar. Sem que o adicione a uma VPC ou Uma EC2, basta apenas duas configurações, a ``description`` e a ``name``.<br>.
+ <img src="https://drive.google.com/uc?export=view&id=1W8zV9LfWb-juB1cM4lr1jrTo6EfO2lXo" alt="Meu Print" width="750">
  
  ```
  resource "aws_security_group" "SG-custom-2" {
@@ -194,11 +214,11 @@ observação: Quando você não define uma VPC, esse security group é automatic
 
  <h4>Adicioando a uma VPC </h4>
  
- Veja que neste exemplo eu irei adicionei uma VPC manualmente (uma VPC customizada criada por mim) e o terraform, ao eu executar um terraform apply, irá realizar um ``replaced``. Ou seja, irá derrubar o que está rodando para aplicar a nova alteração. Essa condição é algo que você tem que ter ciência quando estiver atuando em um ambiente produtivo.
- <img src="https://drive.google.com/uc?export=view&id=15HIj7Fpqq0gHUXO_yHE-pKh8O6Lef3YM" alt="Meu Print" width="2000">
+ Veja que neste exemplo eu irei adicionei uma VPC manualmente (uma VPC customizada criada por mim) e o terraform, ao eu executar um terraform apply, irá realizar um ``replaced``. Ou seja, irá derrubar o que está rodando para aplicar a nova alteração. Essa condição é algo que você tem que ter ciência quando estiver atuando em um ambiente produtivo.<br>
+ <img src="https://drive.google.com/uc?export=view&id=15HIj7Fpqq0gHUXO_yHE-pKh8O6Lef3YM" alt="Meu Print" width="750">
 
-  VPC alterada
-  <img src="https://drive.google.com/uc?export=view&id=1F96El_efbJfzXfjyIpWildGJeLHnWzwO" alt="Meu Print" width="2000">
+  VPC alterada<br>
+  <img src="https://drive.google.com/uc?export=view&id=1F96El_efbJfzXfjyIpWildGJeLHnWzwO" alt="Meu Print" width="750">
 
  ```
  resource "aws_security_group" "SG-custom-2" {
