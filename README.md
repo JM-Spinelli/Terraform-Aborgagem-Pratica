@@ -4,7 +4,7 @@
 <h3>Uma Breve explicação</h3> 
 
 <p>O Terraform é uma ferramenta de Infraestrutura como Código (IaC), ou seja, através de código é  possível provisionar e gerenciar infraestrutura em nuvem e local de forma segura e eficiente.<br>
-Segue uma estrtura de Provider e Resource, sendo o Provider as configurações necessárias para se conectar ao provedor e o Resourve as configurações feitas para provisionar a infraestrtura na nuvem escolhida</p>
+Segue uma estrutura de Provider e Resource, sendo o Provider as configurações necessárias para se conectar ao provedor e o Resourve as configurações feitas para provisionar a infraestrtura na nuvem escolhida</p>
 
 #
 <h3>Comandos Terraform</h3>
