@@ -168,13 +168,12 @@ Para definir os valores gerados pelo user do IAM nos arquivos de configuração,
 ``aws configure --profile "seu usuario IAM"`` 
 <img src="https://drive.google.com/uc?export=view&id=1R84unwmH_JrJPyfFJoeMIsmz0pnFleC0" alt="Meu Print" width="750">
 
-#
+<h2 align="center">📚Lançando Recursos na AWS</h2> 
 
- <h3>3º Lançando primeiro recurso na console AWS</h3>
- 
- Os resources - que são os recursos da AWS - é o que provisiona a infraestrtura da console aws. Para utilizarmos, usamos a seguinte estrtutura ``resource "tipo-de-recurso" "nome-recurso" {}``
+<b>1º - Lançando a EC2</b><br>
+Os resources - que são os recursos da AWS - é o que provisiona a infraestrtura da console aws. Para utilizarmos, usamos a seguinte estrtutura ``resource "tipo-de-recurso" "nome-recurso" {}``<br>
 
- Como exemplo, EC2 lançada. Após o script pronto, iniciado o terraform (terraform init) e aplicado a código (terraform apply)
+ Como exemplo, EC2 lançada. Após o script pronto, iniciado o terraform ``(terraform init)`` e aplicado a código ``(terraform apply)``
   <img src="https://drive.google.com/uc?export=view&id=1IAQR_19JkGVNGOf3Fw6EJ0AUEfjzbFs5" alt="Meu Print" width="750">
  
   EC2 lançada na console AWS<br>
@@ -188,13 +187,10 @@ resource "aws_instance" "Minha-EC2" {
  security_groups = ["sg-0268d6a0a7c8ebe9e"] #Security Group atribuído a EC2
 }
 ```
-Uma observação importante é que, exceto ao utilizar uma VPC Default (criada pela própria AWS), ao lançar uma EC2 é necessário definir uma Subnet_id e um Security_Group para que a EC2 seja lançada com sucesso. 
+Uma observação importante é que, exceto ao utilizar uma VPC Default (criada pela própria AWS), ao lançar uma EC2 é necessário definir uma Subnet_id e um Security_Group para que a EC2 seja lançada com sucesso.<br>
 
-#
-
- <h3>4º Criando Security Group </h3>
- 
- O security group é bem simples de lançar. Sem que o adicione a uma VPC ou Uma EC2, basta apenas duas configurações, a ``description`` e a ``name``.<br>.
+ <b>2º - Criando Security Group</b><br>
+ O security group é bem simples de lançar, bastando configurar apenas duas configurações, a ``description`` e a ``name``.<br>.
  <img src="https://drive.google.com/uc?export=view&id=1W8zV9LfWb-juB1cM4lr1jrTo6EfO2lXo" alt="Meu Print" width="750">
  
  ```
@@ -203,11 +199,10 @@ Uma observação importante é que, exceto ao utilizar uma VPC Default (criada p
   name = "SG-custom-2"
  }
 ```
-observação: Quando você não define uma VPC, esse security group é automaticamente associado a um security group default
+observação: Quando você não define uma VPC, esse security group é automaticamente associado a uma VPC default
 
- <h4>Adicioando a uma VPC </h4>
- 
- Veja que neste exemplo eu irei adicionei uma VPC manualmente (uma VPC customizada criada por mim) e o terraform, ao eu executar um terraform apply, irá realizar um ``replaced``. Ou seja, irá derrubar o que está rodando para aplicar a nova alteração. Essa condição é algo que você tem que ter ciência quando estiver atuando em um ambiente produtivo.<br>
+ <b>3º - Adicioando a uma VPC</b><br>
+ Veja que neste exemplo eu irei adicionei uma VPC manualmente (uma VPC customizada criada por mim) e o terraform, ao executar um terraform apply, irá realizar um ``replaced``. Ou seja, irá derrubar o que está rodando para aplicar a nova alteração. Essa condição é algo que você tem que ter ciência quando estiver atuando em um ambiente produtivo.<br>
  <img src="https://drive.google.com/uc?export=view&id=15HIj7Fpqq0gHUXO_yHE-pKh8O6Lef3YM" alt="Meu Print" width="750">
 
   VPC alterada<br>
@@ -220,8 +215,7 @@ observação: Quando você não define uma VPC, esse security group é automatic
   vpc_id = "vpc-0efcc7cbfc8c0040c"
  }
 ```
-<h4>Criando regras de entrada (inbound) e saida (outbound)</h4>
-
+<b>4 º - Criando regras de entrada (inbound) e saida (outbound)</b><br>
 É justamente em Inbound e Outbound que estabelecemos a comunicação entre os variados tipos de serviços fornecidos pela AWS. No terraform, o inboud é referenciado como ``ingress`` e o outbound por ``egress``. e dentro do bloco de cada um, adiconamos as configurações.<br>
 <img src="https://drive.google.com/uc?export=view&id=1nbezTkggjYwtV4WP98F1GAlmuyMeUjjl" alt="Meu Print" width="750">
 
@@ -257,12 +251,10 @@ Definindo Tag no código<br>
 Tag Name<br>
 <img src="https://drive.google.com/uc?export=view&id=1yVfxeDS77qy1MOS5tAFrbqyb8gM0nEad" alt="Meu Print" width="750">
 
-<h4>5º Criando VPC, Subnet e Internet Gateway</h4>
-
+<b>5º Criando VPC, Subnet e Internet Gateway<b><br>
 Para criar uma rede e suas depedências (subnet, route table, Internet Gateway etc), é necessária a criação de diversos blocos de resources. Abaixo, segue contrução total da rede. 
 
-<b>Criação VPC</b>
-
+<b>5.1 - Criação VPC</b><br>
 Para criar a VPC, utilizamos o resouce  ``"aws_vpc" "Identificador_name" { cidr_block = "ip_rede"}``<br>
 <img src="https://drive.google.com/uc?export=view&id=1HG_SeSvb3dnyELtXGFVwh7aDooba16a3" alt="Meu Print" width="750">
 <img src="https://drive.google.com/uc?export=view&id=1G-g_DAN0V2x_x33sDieaWQwdEZG03pwx" alt="Meu Print" width="750">
@@ -274,8 +266,7 @@ resource "aws_vpc" "teste" {
 ```
 O ``Cidr_block`` é um identificador de endereço de rede e também determina a quantidade de endereços deponíveis de hosts. Numa rede ``/24``, temos um total de 256 endereços disponíveis para hosts. 
 
-<b>Criação subnet</b>
-
+<b>5.2 - Criação subnet</b><br>
 Vou criar aqui apenas uma subnet e dini-la para rodar na avaiability_zone a (us-east-1a).<br>
 <img src="https://drive.google.com/uc?export=view&id=1HLtXNeqv1X2fSoT8br0oKvxPI6frJA7c" alt="Meu Print" width="750">
 <img src="https://drive.google.com/uc?export=view&id=1sZpa_IxHXA5TmZGaHzeazGZW33qjbgPG" alt="Meu Print" width="750">
@@ -292,7 +283,7 @@ tags = {
 }
 ```
 <br>
-<b>Criação Internet Gateway</b>
+<b>5.3 - Criação Internet Gateway</b><br>
 O internet Gateway (ig) é o recurso que permite a rede interna ter acesso a internet (rede externa).<br>
 <img src="https://drive.google.com/uc?export=view&id=1B53t6PgKudKJ-n-de6crfQpLwU0mA1nT" alt="Meu Print" width="750">
 
@@ -308,7 +299,7 @@ resource "aws_internet_gateway" "my-ig" {
 }
 ```
 
-<b>Criação Route Table</b>
+<b>5.4 - Criação Route Table</b><br>
 A Route Table determina para onde o tráfego de rede é direcionado, atuando como um controlador de tráfego da VPC. É nela que setamos o internet Gateway.<br>
 
 <img src="https://drive.google.com/uc?export=view&id=1xrXwcsmiakUrEYgxld_Lb0emXD8XWte2" alt="Meu Print" width="750">
@@ -325,7 +316,7 @@ route {
  }
 ```
 
-<b>Associando Route Table a Subnet</b>
+<b>5.5 - Associando Route Table a Subnet</b><br>
 Mesmo criando os resources (subnet, internet gateway e route table, é necessário associá-los através do bloco ``aws_route_table_association``
 <img src="https://drive.google.com/uc?export=view&id=1jL-mkGs_T1l_V63nbovw9JeY8tMfFtw8" alt="Meu Print" width="2000">
 <img src="https://drive.google.com/uc?export=view&id=1VeYATUuNtziAY4FZCg-zffKMjsYRZZud" alt="Meu Print" width="2000">
