@@ -251,7 +251,7 @@ Definindo Tag no código<br>
 Tag Name<br>
 <img src="https://drive.google.com/uc?export=view&id=1yVfxeDS77qy1MOS5tAFrbqyb8gM0nEad" alt="Meu Print" width="750">
 
-<b>5º Criando VPC, Subnet e Internet Gateway<b><br>
+<b>5º Criando VPC, Subnet e Internet Gateway</b><br>
 Para criar uma rede e suas depedências (subnet, route table, Internet Gateway etc), é necessária a criação de diversos blocos de resources. Abaixo, segue contrução total da rede. 
 
 <b>5.1 - Criação VPC</b><br>
