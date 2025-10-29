@@ -151,9 +151,9 @@ sudo ./aws/install
 <b>4.2.2 - Adicionando credenciais no arquivo de configuração da AWS</b><br>
 Antes de efetivamente adicionar o as credenciais no arquivo de configuração, é necessário ver se já nao há chaves configuradas. para isso, utilizamos esses dois comandos: 
 
-```nano ~/.aws/configure```
+``nano ~/.aws/configure``
 
-`` nano ~/.aws/credentials``
+``nano ~/.aws/credentials``
 
 <b>4.2.2.1 - Limpeza de valores definidos</b><br>
 Para realizar a limpeza de valores ja definidos nesses arquivos de configuração, utilizamos os comandos: 
