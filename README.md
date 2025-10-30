@@ -221,7 +221,7 @@ resource "aws_instance" "Minha-EC2" {
  security_groups = ["sg-0268d6a0a7c8ebe9e"] #Security Group atribuído a EC2
 }
 ```
-Uma observação importante é que, exceto ao utilizar uma VPC Default (criada pela própria AWS), ao lançar uma EC2 é necessário definir uma Subnet_id e um Security_Group para que a EC2 seja lançada com sucesso.<br>
+Uma observação importante é que, exceto ao utilizar uma VPC Default (criada pela própria AWS), ao lançar uma EC2 é necessário definir uma Subnet_id e um Security_Group para que a EC2 seja lançada com sucesso. E aqui é utilizado apenas o ``Subnet_ID``, não sendo necessária a declaraçãode uma `VPC_ID``.<br>
 
  <b>2º - Criando Security Group</b><br>
  O security group é bem simples de lançar, bastando definir apenas duas configurações, a ``description`` e a ``name``.<br>.
